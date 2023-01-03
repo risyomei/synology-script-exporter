@@ -1,0 +1,15 @@
+version: '3'
+services:
+  script-exporter:
+    restart: always
+    image: xli/script_exporter:dev
+    container_name: script-exporter
+    environment:
+      TZ: "Asia/Tokyo"
+    ports:
+      - 9469:9469
+    volumes:
+      - './config.yml:/etc/script-exporter/config.yml'
+      - './check_expire.sh:/etc/script-exporter/check_expire.sh'
+    command: 
+      - '-config.file=/etc/script-exporter/config.yml'

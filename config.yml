@@ -1,0 +1,6 @@
+scripts:
+  - name: cloudcat
+    command: '/etc/script-exporter/check_expire.sh'
+    timeout:
+      max_timeout: 10
+      enforced: true
